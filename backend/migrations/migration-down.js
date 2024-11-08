@@ -4,8 +4,8 @@ const db = require('../config/db');
 async function migrateDown() {
     try {
         // Drop tabel dalam urutan yang aman
-        await db.query('DROP TABLE IF EXISTS categories;');
         await db.query('DROP TABLE IF EXISTS objects;');
+        await db.query('DROP TABLE IF EXISTS categories;');
         await db.query('DROP TABLE IF EXISTS admins;');
 
         console.log('Migrasi down berhasil untuk semua tabel.');
